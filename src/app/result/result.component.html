@@ -1,8 +1,26 @@
-<div class="result">
-    <p>{{ repo.name }}</p>
-    <p>{{ repo.html_url }}</p>
-    <p>{{ repo.description }}</p>
-    <p>{{ repo.forks_count }}</p>
-    <p>{{ repo.stargazers_count }}</p>
-    <p>{{ repo.open_issues_count }}</p>
+<div class="repo-container">
+    <div id="repo-header">
+        <div id="repo-name">{{ repo.name }}</div>
+        <a id="repo-url" [href]="repo.html_url" >{{ repo.html_url }}</a>
+    </div>
+    <div id="repo-desc">
+        <p>{{ repo.description }}</p>
+    </div>
+    <div id="repo-stats">
+        <div class="stat-container">
+            <i id="star-icon" class="fas fa-star"></i>
+            <span id="star-text" class="text">Stars</span>
+            <span id="star-count">{{ repo.stargazers_count }}</span>
+        </div>
+        <div class="stat-container">
+            <i id="fork-icon" class="fas fa-code-branch"></i>
+            <span id="fork-text" class="text">Forks</span>
+            <span id="fork-count">{{ repo.forks_count }}</span>
+        </div>
+        <div class="stat-container">
+            <i id="issue-icon" class="fas fa-exclamation-circle"></i>
+            <span id="issue-text" class="text">Issues</span>
+            <span id="issue-count">{{ repo.open_issues_count }}</span>
+        </div>
+    </div>
 </div>
