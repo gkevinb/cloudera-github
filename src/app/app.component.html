@@ -1,6 +1,12 @@
 <div class="search-container">
-    <input type="text" placeholder="Search.." name="search" (keyup)="onKey($event)">
+    <input type="text" placeholder="Search.." name="search" (keyup)="onKey($event)" (keyup.enter)="getGithubRepos()">
     <button type="submit" (click)="getGithubRepos()"><i class="fa fa-search" aria-hidden="true"></i></button>
 </div>
+
+<app-result *ngFor="let repo of database; let i = index" [repo]="repo" (click)="showIssues(i)">
+</app-result>
+
+<app-issues *ngFor="let issue of issues; let i = index" [issue]="issue">
+</app-issues>
 
 <router-outlet></router-outlet>

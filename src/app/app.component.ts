@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'cloudera-github-app';
   searchValue = '';
   database = [];
+  issues = [];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -28,8 +29,8 @@ export class AppComponent {
         this.database = []
         for(let i = 0; i < res['items'].length; i++){
           let json_data = {}
-          console.log(res['items'][i])
           json_data['name'] = res['items'][i].name
+          json_data['full_name'] = res['items'][i].full_name
           json_data['html_url'] = res['items'][i].html_url
           json_data['description'] = res['items'][i].description
           json_data['forks_count'] = res['items'][i].forks_count
@@ -43,6 +44,21 @@ export class AppComponent {
       console.log('search value empty')
       this.database = []
     }
-
+  }
+  showIssues(i: number) {
+    this.issues = []
+    console.log("Displaying " + i.toString() + " repo issue")
+    this.httpClient.get('https://api.github.com/search/issues?q=repo:' + this.database[i].full_name + '+state:open').subscribe((res)=>{
+        for(let i = 0; i < res['items'].length; i++){
+          let json_data = {}
+          json_data['number'] = res['items'][i].number
+          json_data['title'] = res['items'][i].title
+          json_data['updated_at'] = res['items'][i].updated_at
+          json_data['state'] = res['items'][i].state
+          json_data['url'] = res['items'][i].url
+          this.issues.push(json_data)
+        }
+        console.log(this.issues)
+      });
   }
 }
