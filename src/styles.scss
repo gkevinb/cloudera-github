@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import './node_modules/reset-css/sass/reset';
+
+
+#app{
+    display: grid;
+    grid-template-columns: 100px repeat(2, 1fr) 100px;
+    grid-column-gap: 30px;
+    grid-template-rows: 80px auto;
+    grid-row-gap: 30px;
+    grid-template-areas: 
+        "s s s s"
+        ". r i .";
+}

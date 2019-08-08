@@ -1,3 +1,23 @@
+
+.search-container{
+    grid-area: s;
+
+    background-color: rgb(41, 45, 46);
+    color: white;
+
+    #title{
+        font-size: 36px;
+    }
+}
+.repos-container{
+    grid-area: r;
+}
+.issues-container{
+    grid-area: i;
+}
+
+
+
 input{
     font-size: 32px;
 }
