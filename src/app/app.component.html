@@ -1,15 +1,21 @@
 <div class="search-container">
-    <span id="title">Search a Github.com repository</span>
+    <div id="title">Search a Github.com repository</div>
     <input type="text" placeholder="Search.." name="search" (keyup)="onKey($event)" (keyup.enter)="getGithubRepos()">
     <button type="submit" (click)="getGithubRepos()"><i class="fa fa-search" aria-hidden="true"></i></button>
 </div>
 
 <div class="repos-container">
+    <div id="repos-nav" class="nav">
+
+    </div>
     <app-result class="repo" *ngFor="let repo of database; let i = index" [repo]="repo" (click)="showIssues(i)">
     </app-result>
 </div>
 
 <div class="issues-container">
+    <div id="repos-nav" class="nav">
+
+    </div>
     <app-issues class="issue" *ngFor="let issue of issues; let i = index" [issue]="issue">
     </app-issues>
 </div>

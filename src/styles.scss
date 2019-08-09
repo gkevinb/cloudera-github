@@ -1,4 +1,5 @@
 @import './node_modules/reset-css/sass/reset';
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 
 #app{
@@ -10,4 +11,6 @@
     grid-template-areas: 
         "s s s s"
         ". r i .";
+
+    font-family: 'Montserrat', sans-serif;
 }

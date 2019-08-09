@@ -23,6 +23,7 @@ export class AppComponent {
   getGithubRepos() {
     if(this.searchValue != ''){
       this.httpClient.get('https://api.github.com/search/repositories?q=' + this.searchValue).subscribe((res)=>{
+        console.log(res)
         this.database = [];
         for(let i = 0; i < res['items'].length; i++){
           let json_data = {};
@@ -46,11 +47,12 @@ export class AppComponent {
     this.httpClient.get('https://api.github.com/search/issues?q=repo:' + this.database[i].full_name + '+state:open').subscribe((res)=>{
         for(let i = 0; i < res['items'].length; i++){
           let json_data = {};
+          console.log(res['items'][i])
           json_data['number'] = res['items'][i].number;
           json_data['title'] = res['items'][i].title;
           json_data['updated_at'] = res['items'][i].updated_at;
           json_data['state'] = res['items'][i].state;
-          json_data['url'] = res['items'][i].url;
+          json_data['url'] = res['items'][i].html_url;
           this.issues.push(json_data);
         }
       });

@@ -1,4 +1,40 @@
-.issue{
-    width: 600px;
-    border: 2px solid blue;
+$bg-color: rgb(235, 235, 235);
+
+.issue-container{
+    background-color: $bg-color;
+    border: 2px solid gray;
+    margin-bottom: 10px;
+    display: grid;
+
+    grid-template-columns: auto repeat(5, 1fr);
+    grid-template-rows: 1fr auto 40px;
+    grid-template-areas: "n t t t t t"
+                         "l l l l l l"
+                         ". . . . u u";
+
+    #issue-number{
+        grid-area: n;
+        // text-align: center;
+        font-size: 24px;
+        padding: 10px;
+    }
+    #issue-title{
+        grid-area: t;
+        font-size: 24px;
+        padding: 10px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+    #issue-url{
+        grid-area: l;
+        font-size: 18px;
+        padding: 10px;
+    }
+    #issue-time{
+        grid-area: u;
+        font-size: 18px;
+        padding: 10px;
+        text-align: right;
+    }
 }
+

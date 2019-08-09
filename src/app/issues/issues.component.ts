@@ -13,4 +13,12 @@ export class IssuesComponent implements OnInit {
   ngOnInit() {
   }
 
+  formatNumber(issueNumber: string){
+    return '#' + issueNumber;
+  }
+  formatDate(dateString: string){
+    let timeStamp: Date = new Date(dateString)
+    return timeStamp.toDateString();
+  }
+
 }

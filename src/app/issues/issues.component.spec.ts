@@ -16,6 +16,13 @@ describe('IssuesComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(IssuesComponent);
     component = fixture.componentInstance;
+    component.issue = {
+      number: '1',
+      title: 'TestIssue',
+      url: 'https://www.google.com',
+      updated_at: '2019-05-05T02:55:20Z',
+      state: 'open',
+    };
     fixture.detectChanges();
   });
 

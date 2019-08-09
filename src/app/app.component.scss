@@ -7,6 +7,17 @@
 
     #title{
         font-size: 36px;
+        margin: 20px 200px 0px 120px;
+        width: 600px;
+        float: left;
+    }
+    input{
+        font-size: 32px;
+        margin-top: 16px;
+    }
+    button{
+        font-size: 32px;
+        margin-top: 16px;
     }
 }
 .repos-container{
@@ -16,9 +27,3 @@
     grid-area: i;
 }
 
-input{
-    font-size: 32px;
-}
-button{
-    font-size: 32px;
-}
