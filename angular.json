@@ -123,8 +123,13 @@
               "devServerTarget": "cloudera-github:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cloudera-github"
 }
