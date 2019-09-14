@@ -1,6 +1,6 @@
 <div class="issue-container">
-        <div id="issue-number">{{ formatNumber(issue.number) }}</div>
-        <div id="issue-title">{{ issue.title }}</div>
-        <a id="issue-url" [href]="issue.url" >{{ issue.url }}</a>
-        <div id="issue-time">{{ formatDate(issue.updated_at) }}</div>
+        <div id="issue-number">{{ formatNumber(issue['number']) }}</div>
+        <div id="issue-title">{{ issue['title'] }}</div>
+        <a id="issue-url" [href]="issue['url']" >{{ issue['url'] }}</a>
+        <div id="issue-time">{{ formatDate(issue['updated_at']) }}</div>
 </div>
