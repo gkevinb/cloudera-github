@@ -16,7 +16,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Build production version for Github Pages
 
 ```
-ng build --base-href /cloudera-github/cloudera-github/
+ng build --base-href /cloudera-github/
 ```
 
 Then copy content of `dist` folder into project root folder.
